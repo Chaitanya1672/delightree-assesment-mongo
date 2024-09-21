@@ -1,11 +1,10 @@
 import express from 'express'
-import connectToDatabase from './db'
 import { getUserStats, feedUserStats } from './userStatsService'
+import connectDatabaseMiddleware from './middleware'
 const router = express.Router()
 
-router.get('/user-stats', async (req, res) => {
+router.get('/user-stats', connectDatabaseMiddleware, async (req, res) => {
   try {
-    await connectToDatabase()
     const result = await getUserStats()
     res.json(result)
   } catch (error) {
@@ -14,9 +13,8 @@ router.get('/user-stats', async (req, res) => {
   }
 })
 
-router.post('/user-stats', async (req, res) => {
+router.post('/user-stats', connectDatabaseMiddleware, async (req, res) => {
   try {
-    await connectToDatabase()
     await feedUserStats()
     res.json({ message: 'Data successfully inserted' })
   } catch (error) {
