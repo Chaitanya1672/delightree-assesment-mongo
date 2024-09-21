@@ -6,7 +6,7 @@ const port = process.env.SERVER_PORT || 3333
 import userStatsRoute from './userStatsRoute'
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello server is healthy')
 })
 
 // GET and POST route for getting calculation grouped by user-age
