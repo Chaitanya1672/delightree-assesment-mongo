@@ -1,6 +1,14 @@
-# Node.js Backend Starter
+# Solution MongoDB Aggregation Pipeline Question
+Calculate the total number of posts, comments, likes, and views for each user, grouped by age range.
 
-A robust Node.js backend starter project with essential configurations and tools for code quality and development efficiency.
+## Use case
+
+- It has support for two routes
+  - GET `/api/user-stats`
+  - POST `/api/user-stats`
+
+- GET request will give you calculated total number of posts, comments, likes, and views for each user, grouped by age range.
+- POST request is for feeding dummy data to database
 
 ## Features
 
@@ -8,8 +16,8 @@ A robust Node.js backend starter project with essential configurations and tools
 - ESLint for code linting
 - Prettier for code formatting
 - Husky for pre-commit hooks
-- (Upcoming) CI/CD pipelines for linting and test cases
-- (Upcoming) Dockerfile for containerization
+- CI pipeline is for lint check on every pull request to main/master
+- Dockerfile for image creation & containerization
 
 ## Getting Started
 
@@ -22,7 +30,7 @@ A robust Node.js backend starter project with essential configurations and tools
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Chaitanya1672/backend-starter-template.git
+   git clone https://github.com/Chaitanya1672/delightree-assesment-mongo.git
    ```
 
 2. Install dependencies:
@@ -35,6 +43,7 @@ A robust Node.js backend starter project with essential configurations and tools
    cp .env.example .env
    ```
    Edit the `.env` file with your configuration.
+   **MONGO_DB_URL & DATABASE_NAME is mandatory**
 
 ### Usage
 
@@ -66,12 +75,3 @@ To format code manually:
 ```
 npm run format:fix
 ```
-
-## Upcoming Features
-
-- CI/CD pipelines for automated linting and testing
-- Dockerfile for easy containerization
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
